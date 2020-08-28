@@ -44,6 +44,13 @@ Citizen.CreateThread(function()
 	PlayerData = ESX.GetPlayerData()
 end)
 
+Citizen.CreateThread(function()
+	while true do
+		Citizen.Wait(10)
+		DisablePlayerVehicleRewards(PlayerId())
+	end
+end)
+
 function SetVehicleMaxMods(vehicle)
 	local props = {
 		modEngine       = 2,
